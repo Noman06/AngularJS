@@ -1,0 +1,38 @@
+<html data-ng-app="demoApp">
+<head>
+	<title>Demo</title>
+	<script type="text/javascript" src="js/lib/angular.min.js"></script>
+	<script type="text/javascript" src="js/controllers/app.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1>AngulAir</h1>
+		
+<!--From dynamically u can load data..-->
+<script type="text/javascript" src="app.js"></script>
+
+<div ng-controller="Appcontroller">
+
+                           Name:<input type="text" ng-model="name">
+                           <ul>
+                           	<li ng-repeat="names in friends| filter:name | orderBy:'phone'">{{names.name | uppercase}}- {{names.phone}}</li>
+                           </ul>
+ 
+</div>
+<a href="/view1">View1</a>
+<!--From statically you can load data...-->
+<!--<script type="text/javascript">
+function Appcontroller($scope) {
+	$scope.friends = [{name:'John', phone:'555-1276'},
+                           {name:'Mary', phone:'800-BIG-MARY'},
+                           {name:'Mike', phone:'555-4321'},
+                           {name:'Adam', phone:'555-5678'},
+                           {name:'Julie', phone:'555-8765'},
+                           {name:'Juliette', phone:'555-5678'}]
+};
+</script>
+-->
+</body>
+</html>
